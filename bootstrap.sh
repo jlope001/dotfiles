@@ -32,7 +32,6 @@ if [ ! -h "$ZSHRC_FILE" ]; then
   rm $HOME/.zshrc
 fi
 
-# copy over dotfiles into main directory
+# copy over dotfiles into home directory
 mkdir -p $HOME/.dotfiles/{python,zsh}
 cp -rf $CURRENT_DIRECTORY/zsh python $HOME/.dotfiles/
-

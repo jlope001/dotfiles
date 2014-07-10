@@ -12,7 +12,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autoenv)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -27,3 +27,5 @@ source $HOME/.dotfiles/zsh/aliases.zsh
 # python
 . $HOME/.dotfiles/python/functions.sh
 
+# have zsh run bash PROMPT_COMMAND
+precmd() { eval "$PROMPT_COMMAND" }

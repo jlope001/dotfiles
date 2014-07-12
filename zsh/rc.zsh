@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -23,6 +24,7 @@ source ~/.autoenv/activate.sh
 
 # zsh
 source $HOME/.dotfiles/zsh/aliases.zsh
+. $HOME/.dotfiles/zsh/functions.zsh
 
 # python
 . $HOME/.dotfiles/python/functions.sh

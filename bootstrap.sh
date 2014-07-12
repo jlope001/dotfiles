@@ -4,10 +4,16 @@
 
 CURRENT_DIRECTORY=`pwd`
 
-APT_GET='sudo apt-get'
-if [ `whoami` = 'root' ]; then
-  APT_GET='apt-get'
+# we only support ubuntu/centos
+INSTALL_STRING="apt-get"
+if [ -f /etc/redhat-release ]; then
+  INSTALL_STRING="yum"
 fi
+
+if [ ! `whoami` = 'root' ]; then
+  INSTALL_STRING="sudo $INSTALL_STRING"
+fi
+$INSTALL_STRING -y install zsh
 
 echo "==== bootstrap zsh"
 ZSH_EXISTS="$HOME/.zshrc"

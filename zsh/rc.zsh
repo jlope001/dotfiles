@@ -20,7 +20,6 @@ source $ZSH/oh-my-zsh.sh
 # RVM setup
 export PATH="$PATH:$HOME/.rvm/bin"
 source $HOME/.rvm/scripts/rvm
-source ~/.autoenv/activate.sh
 
 # zsh
 source $HOME/.dotfiles/zsh/aliases.zsh

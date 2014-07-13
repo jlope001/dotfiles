@@ -44,4 +44,5 @@ cp -rf $CURRENT_DIRECTORY/zsh python $HOME/.dotfiles/
 
 # use dotfiles-private-example to load scripts here
 mkdir -p $HOME/.dotfiles/private/{python,zsh}
+touch $HOME/.dotfiles/private/private.sh
 

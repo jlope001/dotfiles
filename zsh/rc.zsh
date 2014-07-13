@@ -29,5 +29,10 @@ source $HOME/.dotfiles/zsh/aliases.zsh
 # python
 . $HOME/.dotfiles/python/functions.sh
 
+# load up private stuff
+if [ -d "$HOME/.dotfiles/private" ]; then
+  . $HOME/.dotfiles/private/private.sh
+fi
+
 # have zsh run bash PROMPT_COMMAND
 precmd() { eval "$PROMPT_COMMAND" }

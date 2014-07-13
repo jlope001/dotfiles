@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# simple bootstrap script that will load up my dotfiles. Don't need anything fancy for now.
+# bootstrap script that will load up dotfiles. Nothing fancy.
 
 CURRENT_DIRECTORY=`pwd`
 
@@ -41,3 +41,7 @@ fi
 # copy over dotfiles into home directory
 mkdir -p $HOME/.dotfiles/{python,zsh}
 cp -rf $CURRENT_DIRECTORY/zsh python $HOME/.dotfiles/
+
+# use dotfiles-private-example to load scripts here
+mkdir -p $HOME/.dotfiles/private/{python,zsh}
+

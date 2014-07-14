@@ -2,7 +2,7 @@
 #
 # bootstrap script that will load up dotfiles. Nothing fancy.
 
-CURRENT_DIRECTORY=`pwd`
+CURRENT_DIRECTORY="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # we only support ubuntu/centos
 INSTALL_STRING="apt-get"

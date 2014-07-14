@@ -27,7 +27,6 @@ if [ ! -d "$OH_ZSH_EXISTS" ]; then
   wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
 fi
 
-# set bash default to zsh
 echo "==== changing default shell to zsh"
 chsh -s `which zsh`
 
@@ -38,11 +37,11 @@ if [ ! -h "$ZSHRC_FILE" ]; then
   rm $HOME/.zshrc
 fi
 
-# copy over dotfiles into home directory
+echo "==== copy over dotfiles into home directory"
 mkdir -p $HOME/.dotfiles/{python,zsh}
 cp -rf $CURRENT_DIRECTORY/zsh python $HOME/.dotfiles/
 
-# use dotfiles-private-example to load scripts here
+echo "====  setup private dotfiles capabilities"
 mkdir -p $HOME/.dotfiles/private/{python,zsh}
 touch $HOME/.dotfiles/private/private.sh
 

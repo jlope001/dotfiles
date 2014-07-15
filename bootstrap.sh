@@ -24,7 +24,7 @@ fi
 echo "==== bootstrap oh-my-zsh"
 OH_ZSH_EXISTS="$HOME/.oh-my-zsh"
 if [ ! -d "$OH_ZSH_EXISTS" ]; then
-  wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+  wget --no-check-certificate http://install.ohmyz.sh -O - | sh
 fi
 
 echo "==== changing default shell to zsh"

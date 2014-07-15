@@ -28,7 +28,14 @@ if [ ! -d "$OH_ZSH_EXISTS" ]; then
 fi
 
 echo "==== changing default shell to zsh"
-chsh -s `which zsh`
+if [ -f /etc/redhat-release ]; then
+  USERNAME=$USER
+  sudo usermod -s /bin/zsh $USERNAME
+else
+  chsh -s `which zsh`
+fi
+
+
 
 echo "==== setup zsh config"
 ZSHRC_FILE="$HOME/.zshrc"

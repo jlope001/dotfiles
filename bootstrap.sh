@@ -35,6 +35,13 @@ else
   sudo chsh -s `which zsh` $SHELL_USERNAME
 fi
 
+echo "==== install additional fonts"
+mkdir -p $HOME/{.fonts,.fonts.conf.d}
+# cd $HOME/.fonts
+wget -P $HOME/.fonts/ https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf
+fc-cache -vf $HOME/.fonts
+wget -P $HOME/.fonts.conf.d/ https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf
+
 echo "==== setup zsh config"
 ZSHRC_FILE="$HOME/.zshrc"
 if [ ! -h "$ZSHRC_FILE" ]; then

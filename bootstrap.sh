@@ -42,6 +42,7 @@ ZSHRC_FILE="$HOME/.zshrc"
 if [ ! -h "$ZSHRC_FILE" ]; then
   cp $HOME/.zshrc $HOME/.zshrc.bak
   rm $HOME/.zshrc
+  ln -s $CURRENT_DIRECTORY/zsh/rc.zsh $HOME/.zshrc
 fi
 
 echo "==== copy over dotfiles into home directory"

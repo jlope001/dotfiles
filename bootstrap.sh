@@ -51,10 +51,13 @@ if [ ! -h "$ZSHRC_FILE" ]; then
 fi
 
 echo "==== copy over dotfiles into home directory"
-mkdir -p $HOME/.dotfiles/{python,zsh}
-cp -rf $CURRENT_DIRECTORY/zsh python $HOME/.dotfiles/
+mkdir -p $HOME/.dotfiles/{python,zsh,vim}
+cp -rf $CURRENT_DIRECTORY/zsh python vim $HOME/.dotfiles/
 
 echo "====  setup private dotfiles capabilities"
 mkdir -p $HOME/.dotfiles/private/{python,zsh}
 touch $HOME/.dotfiles/private/private.sh
+
+echo "====  setup vimrc file"
+ln -s -f $CURRENT_DIRECTORY/vim/vimrc $HOME/.vimrc
 

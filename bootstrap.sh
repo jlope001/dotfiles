@@ -61,3 +61,6 @@ touch $HOME/.dotfiles/private/private.sh
 echo "====  setup vimrc file"
 cp $CURRENT_DIRECTORY/vim/vimrc $HOME/.vimrc
 
+echo "====  setup tmux file"
+cp $CURRENT_DIRECTORY/tmux/tmux.conf $HOME/.tmux.conf
+

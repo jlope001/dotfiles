@@ -17,9 +17,17 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# RVM setup
-export PATH="$PATH:$HOME/.rvm/bin"
-source $HOME/.rvm/scripts/rvm
+# rvm setup
+if [ -d "$HOME/.rvm" ]; then
+  export PATH="$PATH:$HOME/.rvm/bin"
+  source $HOME/.rvm/scripts/rvm
+fi
+# rbenv setup
+if [ -d "$HOME/.rbenv" ]; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+  export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+fi
 
 # zsh
 source $HOME/.dotfiles/zsh/aliases.zsh
@@ -29,7 +37,9 @@ source $HOME/.dotfiles/zsh/aliases.zsh
 . $HOME/.dotfiles/python/functions.sh
 
 # load up private stuff
-for dir in $HOME/.dotfiles/private*/; do . "$dir/private.sh"; done
+mkdir -p $HOME/.dotfiles/private
+touch $HOME/.dotfiles/private/private.sh
+for dir in $HOME/.dotfiles/private*; do . "$dir/private.sh"; done
 
 # have zsh run bash PROMPT_COMMAND
 precmd() { eval "$PROMPT_COMMAND" }

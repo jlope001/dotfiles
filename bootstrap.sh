@@ -60,3 +60,7 @@ cp $CURRENT_DIRECTORY/vim/vimrc $HOME/.vimrc
 echo "====  setup tmux file"
 cp $CURRENT_DIRECTORY/tmux/tmux.conf $HOME/.tmux.conf
 
+# restore permissions
+chown -R $USER:$USER $HOME/.zsh
+chown -R $USER:$USER $HOME/.oh-my-zsh
+chown -R $USER:$USER $HOME/.fonts.conf.d
